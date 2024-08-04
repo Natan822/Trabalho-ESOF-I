@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://l0ph18gwxr6"]
+
+[ext_resource type="Texture2D" uid="uid://brlxptk25k2" path="res://textures/characters/gnomo/gnomo parado.png" id="1_2hr11"]
+[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_qyj5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jbo"]
+size = Vector2(19.7531, 14.8344)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qyj5f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_2hr11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(0.859, 1.215)
+shape = SubResource("RectangleShape2D_p7jbo")
