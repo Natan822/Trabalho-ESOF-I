@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwgoeojfrr7bl"
-path="res://.godot/imported/gnomo andando,,,5.png-15290c40eef10af85f24b32b79c4973a.ctex"
+uid="uid://bhxn4j24adqnq"
+path="res://.godot/imported/gnomo andando,,,1.png-8d0d2d83e159850d1a3db3551c48fe80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/characters/gnomo/gnomo andando,,,5.png"
-dest_files=["res://.godot/imported/gnomo andando,,,5.png-15290c40eef10af85f24b32b79c4973a.ctex"]
+source_file="res://textures/characters/gnomo/gnomo andando/gnomo andando,,,1.png"
+dest_files=["res://.godot/imported/gnomo andando,,,1.png-8d0d2d83e159850d1a3db3551c48fe80.ctex"]
 
 [params]
 
