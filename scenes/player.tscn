@@ -91,4 +91,4 @@ zoom = Vector2(2, 2)
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_uvkmi")
 animation = &"idle"
-frame_progress = 0.774696
+frame_progress = 0.70673

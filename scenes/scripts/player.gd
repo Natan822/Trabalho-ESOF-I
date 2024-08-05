@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_FORCE = -400.0
+const SPEED: float = 300.0
+const JUMP_FORCE: float = -400.0
 
 @onready var animations_gnomo: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprite_gnomo: Sprite2D = $Sprite2D
 
 # Gravidade padrao do objeto 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
