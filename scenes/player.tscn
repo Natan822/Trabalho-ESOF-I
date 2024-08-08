@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://l0ph18gwxr6"]
+[gd_scene load_steps=24 format=3 uid="uid://l0ph18gwxr6"]
 
 [ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_qyj5f"]
 [ext_resource type="Texture2D" uid="uid://csaal0f6l10w1" path="res://textures/characters/gnomo/gnomo parado/gnomo parado.png" id="2_fn0yx"]
@@ -19,12 +19,31 @@
 [ext_resource type="Texture2D" uid="uid://bgxhvvhb0nd3e" path="res://textures/characters/gnomo/gnomo parado animação novo/gnomoparadoanimação3.png" id="10_b81tj"]
 [ext_resource type="Texture2D" uid="uid://b76ra8ngtjckm" path="res://textures/characters/gnomo/gnomo andando/gnomo andando,,,8.png" id="10_oq2l6"]
 [ext_resource type="Texture2D" uid="uid://csc3gex3wx7l0" path="res://textures/characters/gnomo/gnomo parado animação novo/gnomoparadoanimação4.png" id="11_gr5do"]
+[ext_resource type="Texture2D" uid="uid://bflke00fhdob5" path="res://textures/characters/gnomo/gnomo pulando/gnomo pulando1.png" id="12_mburi"]
+[ext_resource type="Texture2D" uid="uid://dnedyco2qeiow" path="res://textures/characters/gnomo/gnomo pulando/gnomo pulando2.png" id="13_3nhd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jbo"]
 size = Vector2(19.7531, 14.8344)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvkmi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ny8to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hspvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b81tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gr5do")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_31up1")
@@ -42,25 +61,19 @@ animations = [{
 "texture": ExtResource("7_135ia")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_antigo",
 "speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_ny8to")
+"texture": ExtResource("12_mburi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_hspvj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_b81tj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_gr5do")
+"texture": ExtResource("13_3nhd1")
 }],
 "loop": true,
-"name": &"idle_novo",
-"speed": 6.0
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -112,3 +125,4 @@ zoom = Vector2(2, 2)
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_uvkmi")
 animation = &"idle"
+frame_progress = 0.282518
