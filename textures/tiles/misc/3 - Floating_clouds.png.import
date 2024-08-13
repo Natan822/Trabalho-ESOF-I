@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnhk7r1xijx1"
-path="res://.godot/imported/3 - Floating_clouds.png-7e4f4cf731d88666a0c7e7504b834b2e.ctex"
+path="res://.godot/imported/3 - Floating_clouds.png-96151ffd58ecebc7009d891522fa5ef0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles/3 - Floating_clouds.png"
-dest_files=["res://.godot/imported/3 - Floating_clouds.png-7e4f4cf731d88666a0c7e7504b834b2e.ctex"]
+source_file="res://textures/tiles/misc/3 - Floating_clouds.png"
+dest_files=["res://.godot/imported/3 - Floating_clouds.png-96151ffd58ecebc7009d891522fa5ef0.ctex"]
 
 [params]
 

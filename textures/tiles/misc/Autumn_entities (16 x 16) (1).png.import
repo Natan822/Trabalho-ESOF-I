@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc5r0a7sbx4n5"
-path="res://.godot/imported/arvore.png-86736059bb328b2d6469d599d6b1aee7.ctex"
+uid="uid://dwaxlklqbqdx4"
+path="res://.godot/imported/Autumn_entities (16 x 16) (1).png-633258bf50ca6d2b135dea2d104cbf05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles/arvore/arvore.png"
-dest_files=["res://.godot/imported/arvore.png-86736059bb328b2d6469d599d6b1aee7.ctex"]
+source_file="res://textures/tiles/misc/Autumn_entities (16 x 16) (1).png"
+dest_files=["res://.godot/imported/Autumn_entities (16 x 16) (1).png-633258bf50ca6d2b135dea2d104cbf05.ctex"]
 
 [params]
 

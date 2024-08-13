@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgug0xhgm74fh"
-path="res://.godot/imported/5 - Sky_color.png-69962f9d2572a96f7c9134a2c03803e6.ctex"
+uid="uid://damvhmroopwa7"
+path="res://.godot/imported/pedra.png-274e70dcfa075845c1ff5b91a53daf30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles/5 - Sky_color.png"
-dest_files=["res://.godot/imported/5 - Sky_color.png-69962f9d2572a96f7c9134a2c03803e6.ctex"]
+source_file="res://textures/tiles/pedra/pedra.png"
+dest_files=["res://.godot/imported/pedra.png-274e70dcfa075845c1ff5b91a53daf30.ctex"]
 
 [params]
 

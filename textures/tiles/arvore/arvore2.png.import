@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc5r0a7sbx4n5"
-path="res://.godot/imported/arvore.png-86736059bb328b2d6469d599d6b1aee7.ctex"
+uid="uid://cthvqi8dq6x3u"
+path="res://.godot/imported/arvore2.png-291ac2f0a31eac99aea5965445624776.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles/arvore/arvore.png"
-dest_files=["res://.godot/imported/arvore.png-86736059bb328b2d6469d599d6b1aee7.ctex"]
+source_file="res://textures/tiles/arvore/arvore2.png"
+dest_files=["res://.godot/imported/arvore2.png-291ac2f0a31eac99aea5965445624776.ctex"]
 
 [params]
 

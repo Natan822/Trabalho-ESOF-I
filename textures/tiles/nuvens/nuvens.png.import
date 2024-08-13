@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq7rdsw5qgqex"
-path="res://.godot/imported/Autumn_entities (16 x 16).png-8512da0fa65c10b1003eab622c7e1842.ctex"
+uid="uid://uipntkx3ckvd"
+path="res://.godot/imported/nuvens.png-f6432196aa9fc6efb799a3314166cef3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles/Autumn_entities (16 x 16).png"
-dest_files=["res://.godot/imported/Autumn_entities (16 x 16).png-8512da0fa65c10b1003eab622c7e1842.ctex"]
+source_file="res://textures/tiles/nuvens/nuvens.png"
+dest_files=["res://.godot/imported/nuvens.png-f6432196aa9fc6efb799a3314166cef3.ctex"]
 
 [params]
 

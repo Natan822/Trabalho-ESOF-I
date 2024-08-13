@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwaxlklqbqdx4"
-path="res://.godot/imported/Autumn_entities (16 x 16) (1).png-c10d02908f03fffe85952a7e6b6c7102.ctex"
+uid="uid://cgug0xhgm74fh"
+path="res://.godot/imported/5 - Sky_color.png-0979530359c42b9a7375ceb673d64a45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles/Autumn_entities (16 x 16) (1).png"
-dest_files=["res://.godot/imported/Autumn_entities (16 x 16) (1).png-c10d02908f03fffe85952a7e6b6c7102.ctex"]
+source_file="res://textures/tiles/cor_do_ceu/5 - Sky_color.png"
+dest_files=["res://.godot/imported/5 - Sky_color.png-0979530359c42b9a7375ceb673d64a45.ctex"]
 
 [params]
 
