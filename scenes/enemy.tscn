@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://00uujnvtiu4g"]
+
+[ext_resource type="Script" path="res://scenes/scripts/enemy.gd" id="1_3f2yb"]
+[ext_resource type="Texture2D" uid="uid://blokm6bbpv3vd" path="res://textures/characters/enemies/Mr. Mochi/Hurt (32 x 32).png" id="2_mulem"]
+[ext_resource type="Texture2D" uid="uid://b6swntr08ax8m" path="res://textures/characters/enemies/Mr. Mochi/idle/l0_idle1.png" id="2_ws02d"]
+[ext_resource type="Texture2D" uid="uid://bil1po3pt6p2p" path="res://textures/characters/enemies/Mr. Mochi/idle/l0_idle2.png" id="3_pkr4d"]
+[ext_resource type="Texture2D" uid="uid://cn8dg3nm1jk3q" path="res://textures/characters/enemies/Mr. Mochi/walk/l0_walk1.png" id="4_nyx4k"]
+[ext_resource type="Texture2D" uid="uid://4q3mxlf1ca83" path="res://textures/characters/enemies/Mr. Mochi/walk/l0_walk2.png" id="5_4txf6"]
+[ext_resource type="Texture2D" uid="uid://bem0xfblk05nd" path="res://textures/characters/enemies/Mr. Mochi/walk/l0_walk4.png" id="6_gmrvo"]
+[ext_resource type="Texture2D" uid="uid://s0ahyok8feg3" path="res://textures/characters/enemies/Mr. Mochi/walk/l0_walk3.png" id="7_yu63l"]
+[ext_resource type="PackedScene" uid="uid://3t3gv4u31h6x" path="res://scenes/area_2d.tscn" id="8_770bf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l51h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mulem")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 8.0,
+"texture": ExtResource("2_ws02d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pkr4d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nyx4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4txf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gmrvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yu63l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u00vw"]
+size = Vector2(16, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iro57"]
+size = Vector2(14, 3)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_3f2yb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6l51h")
+animation = &"idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u00vw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ws02d")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-10, 0)
+collision_mask = 6
+
+[node name="Area2D-hitbox" parent="." instance=ExtResource("8_770bf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D-hitbox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_iro57")
+debug_color = Color(0.974987, 0.133713, 0.216811, 0.42)

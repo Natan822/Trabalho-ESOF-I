@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://l0ph18gwxr6"]
+[gd_scene load_steps=25 format=3 uid="uid://l0ph18gwxr6"]
 
 [ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_qyj5f"]
 [ext_resource type="Texture2D" uid="uid://csaal0f6l10w1" path="res://textures/characters/gnomo/gnomo parado/gnomo parado.png" id="2_fn0yx"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dnedyco2qeiow" path="res://textures/characters/gnomo/gnomo pulando/gnomo pulando2.png" id="13_3nhd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jbo"]
-size = Vector2(19.7531, 14.8344)
+size = Vector2(17.4622, 14.0016)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uvkmi"]
 animations = [{
@@ -105,7 +105,11 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkedt"]
+size = Vector2(17, 17)
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 14
 script = ExtResource("1_qyj5f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -114,7 +118,7 @@ position = Vector2(0, -1)
 texture = ExtResource("2_fn0yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(0.5, 0.505949)
 scale = Vector2(0.859, 1.215)
 shape = SubResource("RectangleShape2D_p7jbo")
 
@@ -126,3 +130,22 @@ position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_uvkmi")
 animation = &"idle"
 frame_progress = 0.282518
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-10, 0)
+collision_mask = 4
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(11, 0)
+collision_mask = 4
+
+[node name="Area2D-hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D-hurtbox"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_lkedt")
+debug_color = Color(0.994911, 0, 0.214301, 0.42)
+
+[connection signal="body_entered" from="Area2D-hurtbox" to="." method="_on_area_2_dhurtbox_body_entered"]

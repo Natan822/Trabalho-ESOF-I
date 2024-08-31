@@ -12,7 +12,10 @@ enum State {
 # Constante de velocidade do personagem
 const SPEED: float = 300.0
 # Constante de força de pulo do personagem
-const JUMP_FORCE: float = -400.0
+const JUMP_FORCE: float = -350.0
+
+var player_life = 10
+var knockback_vector = Vector2.ZERO
 
 # Variável que controla animações do gnomo
 @onready var animations_gnomo: AnimatedSprite2D = $AnimatedSprite2D
@@ -62,6 +65,25 @@ func _update_animation() -> void:
 		State.FALLING:
 			pass
 
+func _on_area_2_dhurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		if player_life > 0:
+			if $RayCastLeft.is_colliding():
+				take_damage(Vector2(400, -200))
+			else:
+				take_damage(Vector2(-400, -200))
+		
+func take_damage(knockback_force = Vector2.ZERO, duration = 0.25):
+	player_life -= 1
+	
+	if knockback_force != Vector2.ZERO:
+		knockback_vector = knockback_force
+		
+		var knockback_tween = get_tree().create_tween()
+		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		animations_gnomo.modulate = Color(1, 0, 0, 1)
+		knockback_tween.parallel().tween_property(animations_gnomo, "modulate", Color(1, 1, 1, 1), duration)
+
 func _physics_process(delta):
 	
 	# Adiciona a gravidade se o player nao estiver no chao
@@ -90,9 +112,15 @@ func _physics_process(delta):
 	# Está parado
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+	
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector
+	
 	_update_state()
 	_update_animation()
 	# Exibe no console estado atual do personagem
-	print(str(State.keys()[_state]))
+	#print(str(State.keys()[_state]))
 	move_and_slide()
+
+
+
