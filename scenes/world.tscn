@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnx2rsbpfkjjw"]
+[gd_scene load_steps=23 format=3 uid="uid://bnx2rsbpfkjjw"]
 
 [ext_resource type="Texture2D" uid="uid://cgug0xhgm74fh" path="res://textures/tiles/cor_do_ceu/5 - Sky_color.png" id="1_mq6m3"]
 [ext_resource type="Texture2D" uid="uid://d1ddvjb5mq6go" path="res://textures/tiles/terra/tiles.png" id="1_u2om1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://uipntkx3ckvd" path="res://textures/tiles/nuvens/nuvens.png" id="7_753vt"]
 [ext_resource type="Texture2D" uid="uid://damvhmroopwa7" path="res://textures/tiles/pedra/pedra.png" id="8_xu7v4"]
 [ext_resource type="PackedScene" uid="uid://00uujnvtiu4g" path="res://scenes/enemy.tscn" id="11_p04qg"]
+[ext_resource type="PackedScene" uid="uid://bnhpyev1cwmex" path="res://scenes/enemy_2.tscn" id="12_ek3ha"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js6jf"]
 texture = ExtResource("1_mq6m3")
@@ -1200,4 +1201,7 @@ layer_2/tile_data = PackedInt32Array(851983, 327686, 4, 917519, 327686, 5, 78644
 position = Vector2(880, 213)
 
 [node name="enemy" parent="." instance=ExtResource("11_p04qg")]
-position = Vector2(928, 229)
+position = Vector2(1131, 312)
+
+[node name="Enemy2" parent="." instance=ExtResource("12_ek3ha")]
+position = Vector2(933, 240)
