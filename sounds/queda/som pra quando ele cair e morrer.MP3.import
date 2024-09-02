@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kbg1jd0sf3rx"
+path="res://.godot/imported/som pra quando ele cair e morrer.MP3-83f575739ec55ab715d7eb8d8c1a2f2d.mp3str"
+
+[deps]
+
+source_file="res://sounds/queda/som pra quando ele cair e morrer.MP3"
+dest_files=["res://.godot/imported/som pra quando ele cair e morrer.MP3-83f575739ec55ab715d7eb8d8c1a2f2d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

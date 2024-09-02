@@ -148,4 +148,8 @@ position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_lkedt")
 debug_color = Color(0.994911, 0, 0.214301, 0.42)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+pitch_scale = 1.2
+
 [connection signal="body_entered" from="Area2D-hurtbox" to="." method="_on_area_2_dhurtbox_body_entered"]

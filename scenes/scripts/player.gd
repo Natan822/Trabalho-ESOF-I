@@ -17,10 +17,12 @@ const JUMP_FORCE: float = -350.0
 var player_life = 10
 var knockback_vector = Vector2.ZERO
 
-# Variável que controla animações do gnomo
+# Controla animações do gnomo
 @onready var animations_gnomo: AnimatedSprite2D = $AnimatedSprite2D
-# Variável que controla sprite do gnomo
+# Controla sprite do gnomo
 @onready var sprite_gnomo: Sprite2D = $Sprite2D
+# Controla sons do gnomo
+@onready var sons: AudioStreamPlayer = $AudioStreamPlayer
 
 # Gravidade padrao do objeto 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -94,6 +96,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		animations_gnomo.play("jump")
+		sons.stream = load("res://sounds/pulo/som pulo.MP3")
+		sons.play(0.0)
 	
 	# Movimenta o player de acordo com a tecla de direcao pressionada
 	var direction = Input.get_axis("ui_left", "ui_right")

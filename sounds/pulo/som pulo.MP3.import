@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://faex88g0l505"
+path="res://.godot/imported/som pulo.MP3-8c6c6e1adf0183366b65cc1a2973a6fa.mp3str"
+
+[deps]
+
+source_file="res://sounds/pulo/som pulo.MP3"
+dest_files=["res://.godot/imported/som pulo.MP3-8c6c6e1adf0183366b65cc1a2973a6fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

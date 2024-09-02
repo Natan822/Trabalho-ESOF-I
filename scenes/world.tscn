@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnx2rsbpfkjjw"]
+[gd_scene load_steps=24 format=3 uid="uid://bnx2rsbpfkjjw"]
 
 [ext_resource type="Texture2D" uid="uid://cgug0xhgm74fh" path="res://textures/tiles/cor_do_ceu/5 - Sky_color.png" id="1_mq6m3"]
 [ext_resource type="Texture2D" uid="uid://d1ddvjb5mq6go" path="res://textures/tiles/terra/tiles.png" id="1_u2om1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://damvhmroopwa7" path="res://textures/tiles/pedra/pedra.png" id="8_xu7v4"]
 [ext_resource type="PackedScene" uid="uid://00uujnvtiu4g" path="res://scenes/enemy.tscn" id="11_p04qg"]
 [ext_resource type="PackedScene" uid="uid://bnhpyev1cwmex" path="res://scenes/enemy_2.tscn" id="12_ek3ha"]
+[ext_resource type="AudioStream" uid="uid://dafmyv0n0jw23" path="res://sounds/musica fundo/som principal do jogo.MP3" id="13_stgh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js6jf"]
 texture = ExtResource("1_mq6m3")
@@ -1233,3 +1234,9 @@ position = Vector2(1877, 257)
 
 [node name="Enemy5" parent="." instance=ExtResource("11_p04qg")]
 position = Vector2(2042, 262)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_stgh5")
+volume_db = -25.0
+pitch_scale = 1.1
+autoplay = true

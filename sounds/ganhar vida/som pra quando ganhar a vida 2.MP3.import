@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0yvh7144c52s"
+path="res://.godot/imported/som pra quando ganhar a vida 2.MP3-79477436dcdb886462fea12be816477e.mp3str"
+
+[deps]
+
+source_file="res://sounds/ganhar vida/som pra quando ganhar a vida 2.MP3"
+dest_files=["res://.godot/imported/som pra quando ganhar a vida 2.MP3-79477436dcdb886462fea12be816477e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

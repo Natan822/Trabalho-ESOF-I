@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dafmyv0n0jw23"
+path="res://.godot/imported/som principal do jogo.MP3-28dcfd1c1398be0afbdf166c89e6050f.mp3str"
+
+[deps]
+
+source_file="res://sounds/musica fundo/som principal do jogo.MP3"
+dest_files=["res://.godot/imported/som principal do jogo.MP3-28dcfd1c1398be0afbdf166c89e6050f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
