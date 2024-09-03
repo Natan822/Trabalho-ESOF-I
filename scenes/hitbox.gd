@@ -6,6 +6,5 @@ func _on_body_entered(body: Node2D) -> void:
 			body.velocity.y += body.JUMP_FORCE * 1.25
 		else:
 			body.velocity.y += body.JUMP_FORCE / 2
-	
-	owner.queue_free()
-	pass # Replace with function body.
+		owner.queue_free()
+		

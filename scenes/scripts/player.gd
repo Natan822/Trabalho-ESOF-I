@@ -14,8 +14,8 @@ const SPEED: float = 300.0
 # Constante de força de pulo do personagem
 const JUMP_FORCE: float = -350.0
 
-var player_life = 10
-var knockback_vector = Vector2.ZERO
+var vidas: int = 3
+var knockback_vector: Vector2 = Vector2.ZERO
 
 # Controla animações do gnomo
 @onready var animations_gnomo: AnimatedSprite2D = $AnimatedSprite2D
@@ -67,24 +67,30 @@ func _update_animation() -> void:
 		State.FALLING:
 			pass
 
-func _on_area_2_dhurtbox_body_entered(body: Node2D) -> void:
+func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
-		if player_life > 0:
+		if vidas > 0:
 			if $RayCastLeft.is_colliding():
 				take_damage(Vector2(400, -200))
 			else:
 				take_damage(Vector2(-400, -200))
 		
 func take_damage(knockback_force = Vector2.ZERO, duration = 0.25):
-	player_life -= 1
-	
-	if knockback_force != Vector2.ZERO:
-		knockback_vector = knockback_force
-		
-		var knockback_tween = get_tree().create_tween()
-		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-		animations_gnomo.modulate = Color(1, 0, 0, 1)
-		knockback_tween.parallel().tween_property(animations_gnomo, "modulate", Color(1, 1, 1, 1), duration)
+	vidas -= 1
+	if vidas == 0:
+		queue_free()
+		get_tree().reload_current_scene()
+	else:
+		sons.stream = load("res://sounds/pulo/som pulo.MP3")
+		sons.pitch_scale = 0.7
+		sons.play(0.0)
+		if knockback_force != Vector2.ZERO:
+			knockback_vector = knockback_force
+			
+			var knockback_tween = get_tree().create_tween()
+			knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+			animations_gnomo.modulate = Color(1, 0, 0, 1)
+			knockback_tween.parallel().tween_property(animations_gnomo, "modulate", Color(1, 1, 1, 1), duration)
 
 func _physics_process(delta):
 	
@@ -96,6 +102,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		animations_gnomo.play("jump")
+		sons.pitch_scale = 1.2
 		sons.stream = load("res://sounds/pulo/som pulo.MP3")
 		sons.play(0.0)
 	
@@ -125,6 +132,3 @@ func _physics_process(delta):
 	# Exibe no console estado atual do personagem
 	#print(str(State.keys()[_state]))
 	move_and_slide()
-
-
-

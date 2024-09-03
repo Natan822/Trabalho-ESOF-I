@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://l0ph18gwxr6"]
+[gd_scene load_steps=28 format=3 uid="uid://l0ph18gwxr6"]
 
 [ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_qyj5f"]
 [ext_resource type="Texture2D" uid="uid://csaal0f6l10w1" path="res://textures/characters/gnomo/gnomo parado/gnomo parado.png" id="2_fn0yx"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://csc3gex3wx7l0" path="res://textures/characters/gnomo/gnomo parado animação novo/gnomoparadoanimação4.png" id="11_gr5do"]
 [ext_resource type="Texture2D" uid="uid://bflke00fhdob5" path="res://textures/characters/gnomo/gnomo pulando/gnomo pulando1.png" id="12_mburi"]
 [ext_resource type="Texture2D" uid="uid://dnedyco2qeiow" path="res://textures/characters/gnomo/gnomo pulando/gnomo pulando2.png" id="13_3nhd1"]
+[ext_resource type="Script" path="res://scenes/scripts/contagemvidas.gd" id="22_yg8pq"]
+[ext_resource type="Texture2D" uid="uid://b1r0pgl0ewkeg" path="res://textures/tiles/coracao/pngwing.com.png" id="23_q22u8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jbo"]
 size = Vector2(17.4622, 14.0016)
@@ -108,6 +110,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkedt"]
 size = Vector2(17, 17)
 
+[sub_resource type="Theme" id="Theme_np3kt"]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
 script = ExtResource("1_qyj5f")
@@ -139,11 +145,11 @@ collision_mask = 4
 target_position = Vector2(11, 0)
 collision_mask = 4
 
-[node name="Area2D-hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D-hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_lkedt")
 debug_color = Color(0.994911, 0, 0.214301, 0.42)
@@ -152,4 +158,21 @@ debug_color = Color(0.994911, 0, 0.214301, 0.42)
 volume_db = -25.0
 pitch_scale = 1.2
 
-[connection signal="body_entered" from="Area2D-hurtbox" to="." method="_on_area_2_dhurtbox_body_entered"]
+[node name="ContagemVidas" type="Label" parent="."]
+offset_left = 141.0
+offset_top = -105.0
+offset_right = 160.0
+offset_bottom = -82.0
+theme = SubResource("Theme_np3kt")
+text = "00"
+script = ExtResource("22_yg8pq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 126.0
+offset_top = -99.0
+offset_right = 139.0
+offset_bottom = -86.0
+texture = ExtResource("23_q22u8")
+expand_mode = 5
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
