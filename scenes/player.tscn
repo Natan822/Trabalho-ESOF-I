@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://l0ph18gwxr6"]
+[gd_scene load_steps=30 format=3 uid="uid://l0ph18gwxr6"]
 
 [ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_qyj5f"]
 [ext_resource type="Texture2D" uid="uid://csaal0f6l10w1" path="res://textures/characters/gnomo/gnomo parado/gnomo parado.png" id="2_fn0yx"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dnedyco2qeiow" path="res://textures/characters/gnomo/gnomo pulando/gnomo pulando2.png" id="13_3nhd1"]
 [ext_resource type="Script" path="res://scenes/scripts/contagemvidas.gd" id="22_yg8pq"]
 [ext_resource type="Texture2D" uid="uid://b1r0pgl0ewkeg" path="res://textures/tiles/coracao/pngwing.com.png" id="23_q22u8"]
+[ext_resource type="Script" path="res://scenes/scripts/Controletempo.gd" id="24_3kwoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jbo"]
 size = Vector2(17.4622, 14.0016)
@@ -114,6 +115,10 @@ size = Vector2(17, 17)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 
+[sub_resource type="Theme" id="Theme_d3yhi"]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
 script = ExtResource("1_qyj5f")
@@ -159,20 +164,31 @@ volume_db = -25.0
 pitch_scale = 1.2
 
 [node name="ContagemVidas" type="Label" parent="."]
-offset_left = 141.0
-offset_top = -105.0
-offset_right = 160.0
-offset_bottom = -82.0
+offset_left = 140.0
+offset_top = -109.0
+offset_right = 159.0
+offset_bottom = -86.0
 theme = SubResource("Theme_np3kt")
 text = "00"
 script = ExtResource("22_yg8pq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 126.0
-offset_top = -99.0
+offset_top = -103.0
 offset_right = 139.0
-offset_bottom = -86.0
+offset_bottom = -90.0
 texture = ExtResource("23_q22u8")
 expand_mode = 5
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ControleTempo" type="Label" parent="."]
+offset_left = -159.0
+offset_top = -109.0
+offset_right = -119.0
+offset_bottom = -86.0
+theme = SubResource("Theme_d3yhi")
+script = ExtResource("24_3kwoo")
+
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="Timer" to="ControleTempo" method="_on_timer_timeout"]
