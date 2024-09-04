@@ -72,7 +72,7 @@ shape = SubResource("RectangleShape2D_u00vw")
 visible = false
 texture = ExtResource("2_ws02d")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2DWall" type="RayCast2D" parent="."]
 target_position = Vector2(-10, 0)
 collision_mask = 6
 
@@ -82,3 +82,7 @@ collision_mask = 6
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_iro57")
 debug_color = Color(0.974987, 0.133713, 0.216811, 0.42)
+
+[node name="RayCast2DGround" type="RayCast2D" parent="."]
+target_position = Vector2(-9, 10)
+collision_mask = 2

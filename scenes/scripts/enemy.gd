@@ -14,10 +14,12 @@ const SPEED: float = 30.0
 # Constante de força de pulo do personagem
 const JUMP_FORCE: float = -400.0
 
-# Variável que controla animações do personagem
+# Controla animações do personagem
 @onready var animations: AnimatedSprite2D = $AnimatedSprite2D
-# Variável que detecta colisao de personagem com parede
-@onready var wall_detector: RayCast2D = $RayCast2D
+# Detecta colisao de personagem com parede
+@onready var wall_detector: RayCast2D = $RayCast2DWall
+# Detecta colisao de personagem com chão
+@onready var ground_detector: RayCast2D = $RayCast2DGround
 
 # Gravidade padrao do objeto 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -25,7 +27,7 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var _state : State = State.IDLE
 
 # Direção do movimento do personagem
-var direction = -1
+var direction: int = -1
 
 # Atualiza estado atual do personagem
 func _update_state() -> void:
@@ -65,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if wall_detector.is_colliding():
+	if wall_detector.is_colliding() or !ground_detector.is_colliding():
 		wall_detector.target_position.x *= -1
 		direction *= -1
 		animations.flip_h = !animations.flip_h
